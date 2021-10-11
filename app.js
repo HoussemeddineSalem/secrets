@@ -167,6 +167,9 @@ app.get('/logout', function (req, res) {
     res.redirect('/');
 });
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 5000;
+}
 
-
-app.listen(3000, err => err ? console.log(err.toString()) : console.log('server is running'))
+app.listen(port, err => err ? console.log(err.toString()) : console.log('server is running'))
